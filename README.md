@@ -1,8 +1,14 @@
-# Aplicação Disney
+# Disney
 
-Dupla: Adriel Massagli e Maria Eduarda Cavalcante.
+> Projeto desenvolvido por Adriel Massagli e Maria Eduarda Cavalcante.
 
-Documentação: https://github.com/MariaEduCavalcante/AppDisney.wiki.git
+Aplicativo sobre os personagens da Disney, contendo a possibilidade de pesquisa, testes e outras funções. 
+
+***
+
+Desenvolvido com base na Disney API [(Análise)](https://github.com/MariaEduCavalcante/AppDisney/wiki/An%C3%A1lise-da-API-do-projeto).
+
+
 
 
   
