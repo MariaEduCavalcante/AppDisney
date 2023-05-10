@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Disney</string>
+
+    <string name="login">FAZER LOGIN</string>
 </resources>
