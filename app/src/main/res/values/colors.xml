@@ -6,4 +6,5 @@
     <color name="vermelho">#E95965</color>
     <color name="azul">#4BA3DD</color>
     <color name="fundo">#FCFCFC</color>
+    <color name="branco">#FFF</color>
 </resources>

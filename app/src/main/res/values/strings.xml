@@ -2,4 +2,6 @@
     <string name="app_name">Disney</string>
 
     <string name="login">FAZER LOGIN</string>
+    <string name="cadas">Não tem uma conta?</string>
+    <string name="registre">Registre-se</string>
 </resources>
