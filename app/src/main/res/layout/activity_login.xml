@@ -20,11 +20,12 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="153dp"
-        android:layout_height="55dp"
+        android:layout_width="184dp"
+        android:layout_height="37dp"
         android:fontFamily="verdana"
         android:text="@string/login"
         android:textColor="@color/branco"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +103,7 @@
         android:backgroundTint="@color/branco"
         android:text="LOGIN"
         android:textColor="@color/vermelho"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
