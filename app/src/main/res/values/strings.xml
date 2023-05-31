@@ -1,7 +1,22 @@
 <resources>
     <string name="app_name">Disney</string>
 
+
     <string name="login">FAZER LOGIN</string>
     <string name="cadas">Não tem uma conta?</string>
     <string name="registre">Registre-se</string>
+    <string name="btnLogin">LOGIN</string>
+
+
+    <string name="registro">REGISTRO</string>
+    <string name="btnRegistrar">REGISTRAR</string>
+    <string name="voltar">voltar</string>
+
+    <string name="Quiz">QUIZ</string>
+    <string name="Vitória">Vitórias</string>
+    <string name="Derrota">Derrotas</string>
+    <string name="PersonagensDia">PERSONAGENS DO DIA</string>
+
+    <string name="Favoritos">FAVORITOS</string>
+
 </resources>

@@ -4,34 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/branco"
-    tools:context=".Home">
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.321"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+    tools:context=".Favoritos">
 
     <TextView
         android:id="@+id/txtQuizHome3"
@@ -48,49 +21,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.02" />
 
-    <Button
-        android:id="@+id/btnQuiz2"
-        android:layout_width="113dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/vermelho"
-        android:textColor="@color/branco"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:icon="@drawable/play_1"
-        app:iconGravity="top"
-        app:iconPadding="50sp"
-        app:iconSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279" />
-
-    <TextView
-        android:id="@+id/txtDerrota2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Derrota"
-        android:textColor="@color/dourado"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="84dp" />
-
-    <TextView
-        android:id="@+id/txtVitoria2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Vitória"
-        android:textColor="@color/dourado"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="84dp" />
-
     <TextView
         android:id="@+id/txtTitFavoritos"
-        android:layout_width="271dp"
-        android:layout_height="98dp"
-        android:text="@string/PersonagensDia"
+        android:layout_width="205dp"
+        android:layout_height="48dp"
+        android:text="@string/Favoritos"
         android:textAlignment="center"
         android:textColor="@color/vermelho"
         android:textSize="36sp"
@@ -99,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
+        app:layout_constraintVertical_bias="0.12" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolFooter"
@@ -187,12 +122,12 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="416dp"
-        android:layout_height="311dp"
+        android:layout_height="530dp"
         android:fillViewport="false"
 
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="356dp">
+        tools:layout_editor_absoluteY="137dp">
 
         <LinearLayout
             android:layout_width="match_parent"
