@@ -18,5 +18,8 @@
     <string name="PersonagensDia">PERSONAGENS DO DIA</string>
 
     <string name="Favoritos">FAVORITOS</string>
+    <string name="TituloQuiz">QUEM SOU EU?</string>
+    <string name="NomeBotaoQUiz">ADIVINHAR</string>
+    <string name="NomePersonagem">NOME</string>
 
 </resources>
