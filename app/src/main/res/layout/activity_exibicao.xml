@@ -70,8 +70,9 @@
 
             <ImageView
                 android:id="@+id/imgPersonagem"
-                android:layout_width="207dp"
-                android:layout_height="262dp"
+                android:layout_width="217dp"
+                android:layout_height="240dp"
+                android:scaleType="fitStart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
