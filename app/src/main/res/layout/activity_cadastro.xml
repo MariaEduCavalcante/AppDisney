@@ -7,25 +7,37 @@
     android:background="@color/vermelho"
     tools:context=".Cadastro">
 
-    <TextView
-        android:id="@+id/textView6"
+    <ImageView
+        android:id="@+id/imgLodoCadas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072"
+        app:srcCompat="@drawable/logo_completa" />
+
+    <TextView
+        android:id="@+id/txtcadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registro"
         android:textColor="@color/branco"
-        android:textColorLink="@color/branco"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="167dp"
         android:layout_height="46dp"
         android:backgroundTint="@color/branco"
+        android:onClick="Registrar"
         android:text="@string/btnRegistrar"
         android:textColor="@color/vermelho"
         android:textSize="20sp"
@@ -34,41 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
-
-    <EditText
-        android:id="@+id/txtConfirmSenhaR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/branco"
-        android:ems="10"
-        android:hint="Confirmar senha"
-        android:inputType="numberPassword"
-        android:textColor="@color/branco"
-        android:textColorHint="@color/branco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
-
-    <EditText
-        android:id="@+id/txtSenhaR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/branco"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="numberPassword"
-        android:textColor="@color/branco"
-        android:textColorHint="@color/branco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintVertical_bias="0.805" />
 
     <EditText
         android:id="@+id/txtUsuarioR"
@@ -85,31 +63,55 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.476" />
 
-    <ImageView
-        android:id="@+id/imgLodoCadas"
+    <EditText
+        android:id="@+id/txtSenhaR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/branco"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="numberPassword"
+        android:textColor="@color/branco"
+        android:textColorHint="@color/branco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06"
-        app:srcCompat="@drawable/logo_completa" />
+        app:layout_constraintVertical_bias="0.586" />
 
     <TextView
-        android:id="@+id/txtcadastro"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/registro"
+        android:onClick="mostrarLogin"
+        android:text="Voltar"
         android:textColor="@color/branco"
-        android:textSize="30sp"
+        android:textColorLink="@color/branco"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.839" />
+
+    <EditText
+        android:id="@+id/txtConfirmSenhaR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/branco"
+        android:ems="10"
+        android:hint="Confirmar senha"
+        android:inputType="numberPassword"
+        android:textColor="@color/branco"
+        android:textColorHint="@color/branco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.706" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
