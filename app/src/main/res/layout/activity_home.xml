@@ -250,4 +250,11 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/btn_home" />
 
+    <TextView
+        android:id="@+id/txtnome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="165dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

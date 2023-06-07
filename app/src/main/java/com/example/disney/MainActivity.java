@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 mostrarLogin();
             }
-        }, 2000);
+        }, 4000);
     }
 
     private void mostrarLogin() {

@@ -6,6 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".pesquisa">
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="412dp"
+        android:layout_height="531dp"
+        android:fillViewport="false"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.716"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="383dp"
+                android:layout_height="200dp"
+                android:layout_margin="17dp"
+                android:onClick="Exibicao"
+                app:cardBackgroundColor="#6BFFFFFF"
+                app:cardCornerRadius="15dp">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="383dp"
+                android:layout_height="200dp"
+                android:layout_margin="17dp"
+                android:onClick="Exibicao"
+                app:cardBackgroundColor="#6BFFFFFF"
+                app:cardCornerRadius="15dp">
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="383dp"
+                android:layout_height="200dp"
+                android:layout_margin="17dp"
+                android:onClick="Exibicao"
+                app:cardBackgroundColor="#6BFFFFFF"
+                app:cardCornerRadius="15dp">
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
     <TextView
         android:id="@+id/txtQuizHome3"
         android:layout_width="wrap_content"
@@ -30,8 +85,7 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/btnHome"
@@ -40,6 +94,7 @@
         android:layout_marginStart="175dp"
         android:layout_marginEnd="179dp"
         android:backgroundTint="@color/azul"
+        android:onClick="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/toolFooter"
         app:layout_constraintHorizontal_bias="1.0"
@@ -55,6 +110,7 @@
         android:layout_marginEnd="301dp"
         android:background="@drawable/btn_pesquisa"
         android:backgroundTint="@color/azul"
+        android:onClick="Pesquisa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/toolFooter"
         app:layout_constraintHorizontal_bias="1.0"
@@ -71,6 +127,7 @@
         android:layout_marginEnd="50dp"
         android:background="@drawable/btn_pesquisa"
         android:backgroundTint="@color/azul"
+        android:onClick="Favoritos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/toolFooter"
         app:layout_constraintHorizontal_bias="0.0"
