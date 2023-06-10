@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Disney"
         tools:targetApi="31">
-
         <activity
             android:name=".exibicao"
             android:exported="false" />
@@ -44,11 +43,13 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Widget"
+        <receiver
+            android:name=".Widget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget" />
