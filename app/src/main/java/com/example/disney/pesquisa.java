@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -101,15 +102,19 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             String filme = null;
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
-                    (filme == null && nome == null)) {
+                    (filme == null)) {
                 // Obtem a informação
-                JSONObject book = itemsArray.getJSONObject(i);
-                JSONObject volumeInfo = book.getJSONObject("data");
+
+                Log.v("ERRO APLICAÇÃO", String.valueOf(itemsArray));
+                JSONObject persona = itemsArray.getJSONObject(i);
+
+                JSONArray volumeInfo = persona.getJSONArray("films");
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-                    nome = volumeInfo.getString("name");
-                    filme = volumeInfo.getString("films");
+
+                   // nome = a.getString("name");
+                    filme =  volumeInfo.getString(0);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -117,7 +122,7 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
                 i++;
             }
             //mostra o resultado qdo possivel.
-            if (nome != null && filme != null) {
+            if (filme != null) {
                 nmNome.setText(nome);
                 nmFilme.setText(filme);
                 //nmLivro.setText(R.string.str_empty);
