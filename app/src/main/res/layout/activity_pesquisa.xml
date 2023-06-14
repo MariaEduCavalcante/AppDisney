@@ -6,61 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".pesquisa">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="412dp"
-        android:layout_height="531dp"
-        android:fillViewport="false"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="383dp"
-                android:layout_height="200dp"
-                android:layout_margin="17dp"
-                android:onClick="Exibicao"
-                app:cardBackgroundColor="#6BFFFFFF"
-                app:cardCornerRadius="15dp">
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="383dp"
-                android:layout_height="200dp"
-                android:layout_margin="17dp"
-                android:onClick="Exibicao"
-                app:cardBackgroundColor="#6BFFFFFF"
-                app:cardCornerRadius="15dp">
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="383dp"
-                android:layout_height="200dp"
-                android:layout_margin="17dp"
-                android:onClick="Exibicao"
-                app:cardBackgroundColor="#6BFFFFFF"
-                app:cardCornerRadius="15dp">
-
-
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
-    </ScrollView>
-
     <TextView
         android:id="@+id/txtQuizHome3"
         android:layout_width="wrap_content"
@@ -181,6 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/fundo"
+        android:onClick="buscaPersonagem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
@@ -188,5 +134,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.119"
         app:srcCompat="@drawable/lupa" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <TextView
+        android:id="@+id/txtFilme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

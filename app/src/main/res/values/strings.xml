@@ -26,4 +26,10 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
+
+    <string name="str_empty">empty\n</string>
+    <string name="loading">loading\n</string>
+    <string name="no_search_term">term</string>
+    <string name="no_network">network</string>
+    <string name="no_results">results\n</string>
 </resources>
