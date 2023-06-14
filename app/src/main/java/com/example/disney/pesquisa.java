@@ -112,9 +112,8 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-
-                   // nome = a.getString("name");
-                    filme =  volumeInfo.getString(0);
+                   nome = persona.getString("name");
+                   filme =  volumeInfo.getString(0);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
