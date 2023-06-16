@@ -60,7 +60,7 @@
         android:layout_below="@+id/textView8"
         android:layout_alignParentStart="true"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="102dp"
         android:layout_toStartOf="@+id/txtDerrota"
         android:text="@string/Vitória"
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView8"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="48dp"
         android:text="@string/Derrota"
         android:textColor="@color/dourado"
@@ -99,10 +99,21 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="143dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="143dp"
         android:backgroundTint="@color/azul"
         android:text="Jogar"
         android:textColor="@color/branco" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="103dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginEnd="154dp"
+        android:background="@drawable/disney"
+        app:srcCompat="@drawable/disney" />
 
 </RelativeLayout>
