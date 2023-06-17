@@ -208,8 +208,7 @@
                 android:text="@string/btnWallpaper"
                 android:textColor="@color/branco"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
         </LinearLayout>
 

@@ -46,9 +46,6 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
-
-
-
     }
 
     public void buscaPersonagem(View view) {
@@ -164,18 +161,6 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
     public void onLoaderReset(@NonNull Loader<String> loader) {
         // obrigatório implementar, nenhuma ação executada
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public void Quiz(View view) {

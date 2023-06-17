@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.annotation.SuppressLint;
+import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -14,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,8 +27,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+
 public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>{
     private EditText nmPesquisa;
+
+    Button bSetWallpaper;
     private TextView nmNome;private TextView nmFilme;private TextView nmShow;private ImageView nmImagem;
 
     @Override
@@ -43,6 +50,7 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         }
 
         pesquisa buscaPersonagem = new pesquisa();
+
     }
 
     public void buscaPersonagem(View view) {
@@ -138,9 +146,9 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             }
             //mostra o resultado qdo possivel.
             if (filme != null) {
-                nmShow.setText("TvShow:" + show);
+                nmShow.setText("TvShow: " + show);
                 nmNome.setText(nome);
-                nmFilme.setText("Filme:" + filme);
+                nmFilme.setText("Filme: " + filme);
                 //picasso serve carregar a imagem
                 Picasso.get().load(imagem).into(nmImagem);
 
@@ -154,6 +162,22 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             //nmNome.setText("deu");
             //nmFilme.setText("errado");
         }
+
+        final WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+
+        bSetWallpaper = findViewById(R.id.btnDefinir);
+        bSetWallpaper.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
+            @Override
+            public void onClick(View v) {
+
+               // try {
+                   // wallpaperManager.setResource(Picasso.get().load());
+                //} catch (IOException e) {
+                    //e.printStackTrace();
+               // }
+            }
+        });
     }
 
     @Override
