@@ -20,6 +20,8 @@ public class Home extends AppCompatActivity {
 
     }
 
+
+
     public void Quiz(View view) {
         Intent intent = new Intent (getApplicationContext(), quiz.class);
         startActivity(intent);

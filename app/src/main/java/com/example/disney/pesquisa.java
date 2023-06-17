@@ -15,7 +15,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,8 +26,7 @@ import org.json.JSONObject;
 
 public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>{
     private EditText nmPesquisa;
-    private TextView nmNome;
-    private TextView nmFilme;
+    private TextView nmNome;private TextView nmFilme;private TextView nmShow;private ImageView nmImagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         nmPesquisa = findViewById(R.id.txtPesquisa);
         nmNome = findViewById(R.id.txtNome);
         nmFilme = findViewById(R.id.txtFilme);
+        nmShow = findViewById(R.id.txtShow);
+        nmImagem = findViewById(R.id.imgPersona);
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
@@ -64,17 +68,19 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
             LoaderManager.getInstance(this).restartLoader(0, queryBundle, this);
-            nmFilme.setText(R.string.str_empty);
-            nmNome.setText(R.string.loading);
+
+
         }
         // atualiza a textview para informar que não há conexão ou termo de busca
         else {
             if (queryString.length() == 0) {
                 nmFilme.setText(R.string.str_empty);
                 nmNome.setText(R.string.no_search_term);
+                nmShow.setText(R.string.no_search_term);
             } else {
                 nmFilme.setText(" ");
                 nmNome.setText(R.string.no_network);
+                nmShow.setText(R.string.no_network);
             }
         }
     }
@@ -100,6 +106,8 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             int i = 0;
             String nome = null;
             String filme = null;
+            String show = null;
+            String imagem = null;
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
                     (filme == null)) {
@@ -109,11 +117,17 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
                 JSONObject persona = itemsArray.getJSONObject(i);
 
                 JSONArray volumeInfo = persona.getJSONArray("films");
+                JSONArray showInfo = persona.getJSONArray("tvShows");//
+
+
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
                    nome = persona.getString("name");
                    filme =  volumeInfo.getString(0);
+                   show =  showInfo.getString(0);
+                   imagem = persona.getString("imageUrl");
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -122,18 +136,21 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             }
             //mostra o resultado qdo possivel.
             if (filme != null) {
+                nmShow.setText("TvShow:" + show);
                 nmNome.setText(nome);
-                nmFilme.setText(filme);
-                //nmLivro.setText(R.string.str_empty);
+                nmFilme.setText("Filme:" + filme);
+                //picasso serve carregar a imagem
+                Picasso.get().load(imagem).into(nmImagem);
+
             } else {
                 // If none are found, update the UI to show failed results.
-                nmNome.setText("resultado");
-                nmFilme.setText("falho");
+                //nmNome.setText("resultado");
+                //nmFilme.setText("falho");
             }
         } catch (Exception e) {
             // Se não receber um JSOn valido, informa ao usuário
-            nmNome.setText("deu");
-            nmFilme.setText("errado");
+            //nmNome.setText("deu");
+            //nmFilme.setText("errado");
         }
     }
 
@@ -145,10 +162,6 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
 
 
 
-    public void Exibicao(View view) {
-        Intent intent = new Intent (getApplicationContext(), exibicao.class);
-        startActivity(intent);
-    }
     public void Pesquisa(View view) {
         Intent intent = new Intent (getApplicationContext(), pesquisa.class);
         startActivity(intent);
