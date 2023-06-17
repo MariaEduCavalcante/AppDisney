@@ -7,195 +7,200 @@
     android:background="@color/branco"
     tools:context=".Home">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="412dp"
-        android:layout_height="328dp"
-        android:fillViewport="false"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833"
-        tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="383dp"
-                android:layout_height="200dp"
-                android:layout_margin="17dp"
-                android:onClick="Exibicao"
-                app:cardBackgroundColor="#6BFFFFFF"
-                app:cardCornerRadius="15dp">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolHead"
+            android:layout_width="425dp"
+            android:layout_height="62dp"
+            android:background="@color/vermelho"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="390dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imgRandom1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars" />
-            </androidx.cardview.widget.CardView>
+                    android:id="@+id/imgLogoHome"
+                    android:layout_width="70dp"
+                    android:layout_height="54dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.011"
+                    app:srcCompat="@drawable/logo_completa" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="383dp"
-                android:layout_height="200dp"
-                android:layout_margin="17dp"
-                android:onClick="Exibicao"
-                app:cardBackgroundColor="#6BFFFFFF"
-                app:cardCornerRadius="15dp">
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="383dp"
-                android:layout_height="200dp"
-                android:layout_margin="17dp"
-                android:onClick="Exibicao"
-                app:cardBackgroundColor="#6BFFFFFF"
-                app:cardCornerRadius="15dp">
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
 
 
-            </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtTitFavoritos"
+            android:layout_width="271dp"
+            android:layout_height="98dp"
+            android:text="@string/PersonagensDia"
+            android:textAlignment="center"
+            android:textColor="@color/vermelho"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.129" />
+
+        <Button
+            android:id="@+id/btnQuiz2"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/vermelho"
+            android:onClick="buscaPersonagem"
+            android:text="@string/btnSugestao"
+            android:textColor="@color/branco"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:iconGravity="top"
+            app:iconPadding="50sp"
+            app:iconSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.282" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="412dp"
+            android:layout_height="449dp"
+            android:fillViewport="false"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.645"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="17dp"
+                    app:cardBackgroundColor="#6BFFFFFF"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgRandom1"
+                            android:layout_width="165dp"
+                            android:layout_height="162dp"
+                            android:layout_margin="5px"
+                            android:layout_marginTop="10dp"
+                            android:adjustViewBounds="false"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/txtSugestao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/vermelho"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="250dp"
+                    android:layout_margin="17dp"
+                    android:onClick="Exibicao"
+                    app:cardBackgroundColor="#6BFFFFFF"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:srcCompat="@tools:sample/avatars" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="250dp"
+                    android:layout_margin="17dp"
+                    android:onClick="Exibicao"
+                    app:cardBackgroundColor="#6BFFFFFF"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:srcCompat="@tools:sample/avatars" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
 
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.321"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
 
-    <TextView
-        android:id="@+id/txtQuizHome3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Quiz"
-        android:textColor="@color/vermelho"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtDerrota2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Derrota"
-        android:textColor="@color/dourado"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
 
-    <TextView
-        android:id="@+id/txtVitoria2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Vitória"
-        android:textColor="@color/dourado"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
 
-    <TextView
-        android:id="@+id/txtTitFavoritos"
-        android:layout_width="271dp"
-        android:layout_height="98dp"
-        android:text="@string/PersonagensDia"
-        android:textAlignment="center"
-        android:textColor="@color/vermelho"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
 
-    <Button
-        android:id="@+id/btnQuiz2"
-        android:layout_width="113dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/vermelho"
-        android:onClick="Quiz"
-        android:textColor="@color/branco"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:icon="@drawable/play_1"
-        app:iconGravity="top"
-        app:iconPadding="50sp"
-        app:iconSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolHead"
-        android:layout_width="415dp"
-        android:layout_height="62dp"
-        android:background="@color/vermelho"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imgLogoHome"
-        android:layout_width="70dp"
-        android:layout_height="54dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011"
-        app:srcCompat="@drawable/logo_completa" />
 
 
     <androidx.appcompat.widget.Toolbar
@@ -218,7 +223,7 @@
         android:layout_height="67dp"
         android:background="@drawable/btn_pesquisa"
         android:backgroundTint="@color/vermelho"
-        android:onClick="Favoritos"
+        android:onClick="Quiz"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.833"
@@ -255,12 +260,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/btn_home" />
-
-    <TextView
-        android:id="@+id/txtnome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="165dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

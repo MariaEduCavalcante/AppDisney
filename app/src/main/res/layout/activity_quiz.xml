@@ -31,7 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        />
 
     <ImageButton
         android:id="@+id/btnHome"
@@ -133,13 +133,14 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintVertical_bias="0.586" />
 
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="167dp"
         android:layout_height="46dp"
         android:backgroundTint="@color/azul"
+        android:onClick="adivinha"
         android:text="@string/NomeBotaoQUiz"
         android:textColor="@color/branco"
         android:textSize="20sp"
@@ -152,7 +153,7 @@
         app:layout_constraintVertical_bias="0.708" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgAdivinha"
         android:layout_width="214dp"
         android:layout_height="219dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -163,18 +164,32 @@
         app:layout_constraintVertical_bias="0.304"
         app:srcCompat="@drawable/olaf" />
 
-    <View
-        android:id="@+id/view"
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Iniciar"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
+
+    <ImageView
+        android:id="@+id/imgCoberta"
         android:layout_width="214dp"
         android:layout_height="190dp"
         android:layout_marginTop="156dp"
-        android:background="#FEFAFD"
-        android:backgroundTint="@color/branco"
-        android:backgroundTintMode="add"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/fundobranco" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

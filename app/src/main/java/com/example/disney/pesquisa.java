@@ -41,6 +41,8 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
+
+        pesquisa buscaPersonagem = new pesquisa();
     }
 
     public void buscaPersonagem(View view) {

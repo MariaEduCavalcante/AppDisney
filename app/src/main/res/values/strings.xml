@@ -32,4 +32,5 @@
     <string name="no_search_term">term</string>
     <string name="no_network">network</string>
     <string name="no_results">results\n</string>
+    <string name="btnSugestao">Sugerir</string>
 </resources>
