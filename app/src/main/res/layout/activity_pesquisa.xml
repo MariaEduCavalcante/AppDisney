@@ -143,20 +143,6 @@
             android:paddingTop="10dp">
 
 
-            <ImageView
-                android:id="@+id/imgPersona"
-                android:layout_width="217dp"
-                android:layout_height="240dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.233"
-                tools:srcCompat="@tools:sample/avatars" />
-
-
             <TextView
                 android:id="@+id/txtNome"
                 android:layout_width="wrap_content"
@@ -172,6 +158,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.457" />
+
+
+            <ImageView
+                android:id="@+id/imgPersona"
+                android:layout_width="217dp"
+                android:layout_height="240dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.233"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/txtFilme"
@@ -199,16 +199,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.602"
                 android:gravity="center_horizontal"/>
-
-            <Button
-                android:id="@+id/btnDefinir"
-                android:layout_width="wrap_content"
-                android:layout_height="46dp"
-                android:backgroundTint="@color/azul"
-                android:text="@string/btnWallpaper"
-                android:textColor="@color/branco"
-                android:textSize="20sp"
-                android:textStyle="bold" />
 
         </LinearLayout>
 

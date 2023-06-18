@@ -52,11 +52,10 @@
         </androidx.appcompat.widget.Toolbar>
 
 
-
         <TextView
             android:id="@+id/txtTitFavoritos"
-            android:layout_width="271dp"
-            android:layout_height="98dp"
+            android:layout_width="226dp"
+            android:layout_height="wrap_content"
             android:text="@string/PersonagensDia"
             android:textAlignment="center"
             android:textColor="@color/vermelho"
@@ -68,130 +67,105 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.129" />
 
-        <Button
-            android:id="@+id/btnQuiz2"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/vermelho"
-            android:onClick="buscaPersonagem"
-            android:text="@string/btnSugestao"
-            android:textColor="@color/branco"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:iconGravity="top"
-            app:iconPadding="50sp"
-            app:iconSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.282" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="397dp"
+            android:layout_height="300dp"
+            android:layout_margin="17dp"
+            app:cardBackgroundColor="#6BFFFFFF"
+            app:cardCornerRadius="15dp">
 
-        <ScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="412dp"
-            android:layout_height="449dp"
-            android:fillViewport="false"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.645"
-            tools:ignore="MissingConstraints">
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="250dp"
-                    android:layout_height="300dp"
-                    android:layout_margin="17dp"
-                    app:cardBackgroundColor="#6BFFFFFF"
-                    app:cardCornerRadius="15dp">
+                <ImageView
+                    android:id="@+id/imgRandom1"
+                    android:layout_width="165dp"
+                    android:layout_height="162dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="73dp"
+                    android:layout_marginEnd="5px"
+                    android:layout_marginBottom="31dp"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="true"
+                    android:scaleType="centerCrop"
+                    tools:srcCompat="@tools:sample/avatars" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtSugestao"
+                    android:layout_width="161dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="161dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginBottom="99dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-                        <ImageView
-                            android:id="@+id/imgRandom1"
-                            android:layout_width="165dp"
-                            android:layout_height="162dp"
-                            android:layout_margin="5px"
-                            android:layout_marginTop="10dp"
-                            android:adjustViewBounds="false"
-                            android:cropToPadding="true"
-                            android:scaleType="centerCrop"
-                            tools:srcCompat="@tools:sample/avatars" />
+                <TextView
+                    android:id="@+id/txtFilmeSugestao"
+                    android:layout_width="352dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginBottom="240dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/vermelho"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/txtSugestao"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textColor="@color/vermelho"
-                            android:textSize="30sp"
-                            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="44dp"
+                    android:layout_marginBottom="160dp"
+                    android:text="Personagem:"
+                    android:textSize="20sp" />
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                <Button
+                    android:id="@+id/btnQuiz2"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="38dp"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="@color/vermelho"
+                    android:onClick="buscaPersonagem"
+                    android:text="@string/btnSugestao"
+                    android:textAlignment="center"
+                    android:textColor="@color/branco"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:iconGravity="top"
+                    app:iconPadding="50sp"
+                    app:iconSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.282" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="200dp"
-                    android:layout_height="250dp"
-                    android:layout_margin="17dp"
-                    android:onClick="Exibicao"
-                    app:cardBackgroundColor="#6BFFFFFF"
-                    app:cardCornerRadius="15dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/img2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:srcCompat="@tools:sample/avatars" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="200dp"
-                    android:layout_height="250dp"
-                    android:layout_margin="17dp"
-                    android:onClick="Exibicao"
-                    app:cardBackgroundColor="#6BFFFFFF"
-                    app:cardCornerRadius="15dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/img3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:srcCompat="@tools:sample/avatars" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-            </LinearLayout>
-        </ScrollView>
-
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>

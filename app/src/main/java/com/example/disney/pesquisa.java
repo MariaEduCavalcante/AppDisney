@@ -45,11 +45,14 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         nmFilme = findViewById(R.id.txtFilme);
         nmShow = findViewById(R.id.txtShow);
         nmImagem = findViewById(R.id.imgPersona);
+        bSetWallpaper = findViewById(R.id.btnDefinir);
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
 
         pesquisa buscaPersonagem = new pesquisa();
+        
+        
 
     }
 
@@ -163,22 +166,9 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             //nmFilme.setText("errado");
         }
 
-        final WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
-
-        bSetWallpaper = findViewById(R.id.btnDefinir);
-        bSetWallpaper.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
-            @Override
-            public void onClick(View v) {
-
-               // try {
-                   // wallpaperManager.setResource(Picasso.get().load());
-                //} catch (IOException e) {
-                    //e.printStackTrace();
-               // }
-            }
-        });
     }
+
+
 
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {

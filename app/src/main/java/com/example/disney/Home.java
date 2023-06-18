@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -14,7 +15,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,16 +29,17 @@ import java.util.Random;
 public class Home extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private ImageView nmImagem;
-    private ImageView nmImagem2;
-    private ImageView nmImagem3;
-    private TextView nmNome;
+    private TextView nmNome, nmFilme;
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         nmImagem = findViewById(R.id.imgRandom1);
         nmNome = findViewById(R.id.txtSugestao);
+        nmFilme = findViewById(R.id.txtFilmeSugestao);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -50,18 +51,11 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
 
     public void buscaPersonagem(View view) {
         //define os personagens possiveis
-        String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna", "Minnie", "Mickey", "Pluto", "Jasmine", "Rapunzel", "Tiana", "Stitch", "Flynn", "Mike", "Hades"};
+        String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna", "Troy", "Tarzan", "Pluto", "Lilo", "Rapunzel", "Moana", "Stitch", "Kuzco", "Kuzco", "Koda"};
         //cria uma variavel random
         int x = new Random().nextInt(14);
         //atribui o valor aleatorio
         String queryString = personagens[x];
-        // esconde o teclado qdo o botão é clicado
-        InputMethodManager inputManager = (InputMethodManager)
-                getSystemService(Context.INPUT_METHOD_SERVICE);
-        if (inputManager != null) {
-            inputManager.hideSoftInputFromWindow(view.getWindowToken(),
-                    InputMethodManager.HIDE_NOT_ALWAYS);
-        }
 
         // Verifica o status da conexão de rede
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -115,6 +109,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
 
             String nome = null;
             String imagem = null;
+            String filme = null;
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
                     (nome == null)) {
@@ -132,6 +127,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
                 try {
                     nome = persona.getString("name");
                     imagem = persona.getString("imageUrl");
+                    filme = volumeInfo.getString(0);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -144,6 +140,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
                 //picasso serve carregar a imagem
                 Picasso.get().load(imagem).into(nmImagem);
                 nmNome.setText(nome);
+                nmFilme.setText(filme);
 
             } else {
                 // If none are found, update the UI to show failed results.
