@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -98,13 +99,9 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         // atualiza a textview para informar que não há conexão ou termo de busca
         else {
             if (queryString.length() == 0) {
-                nmFilme.setText(R.string.str_empty);
-                nmNome.setText(R.string.no_search_term);
-                nmShow.setText(R.string.no_search_term);
+                Toast.makeText(pesquisa.this, "Termo inválido", Toast.LENGTH_SHORT).show();
             } else {
-                nmFilme.setText(" ");
-                nmNome.setText(R.string.no_network);
-                nmShow.setText(R.string.no_network);
+                Toast.makeText(pesquisa.this, "Verifique a conexão", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -188,9 +185,7 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
 
 
             } else {
-                // If none are found, update the UI to show failed results.
-                //nmNome.setText("resultado");
-                //nmFilme.setText("falho");
+                Toast.makeText(pesquisa.this, "Resultado não encontrado", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             // Se não receber um JSOn valido, informa ao usuário
