@@ -15,7 +15,7 @@ public class Favoritos extends AppCompatActivity {
     }
 
     public void Exibicao(View view) {
-        Intent intent = new Intent (getApplicationContext(), exibicao.class);
+        Intent intent = new Intent (getApplicationContext(), pesquisa.class);
         startActivity(intent);
     }
     public void Pesquisa(View view) {

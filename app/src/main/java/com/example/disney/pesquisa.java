@@ -1,5 +1,7 @@
 package com.example.disney;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,28 +33,37 @@ import java.io.IOException;
 
 public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>{
     private EditText nmPesquisa;
+    private TextView nmNome, nmNome2, nmFilme, nmFilme2, nmShow, nmShow2;
+    private ImageView nmImagem, nmImagem2;
 
-    Button bSetWallpaper;
-    private TextView nmNome;private TextView nmFilme;private TextView nmShow;private ImageView nmImagem;
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisa);
+
+        // Recebe a informação da intent anterior
+        Intent intentDisplay = getIntent();
+        String messageDisplay = intentDisplay.getStringExtra(Widget.EXTRA_MESSAGE);
 
         nmPesquisa = findViewById(R.id.txtPesquisa);
         nmNome = findViewById(R.id.txtNome);
         nmFilme = findViewById(R.id.txtFilme);
         nmShow = findViewById(R.id.txtShow);
         nmImagem = findViewById(R.id.imgPersona);
-        bSetWallpaper = findViewById(R.id.btnDefinir);
+
+        nmNome2 = findViewById(R.id.txtNome2);
+        nmFilme2 = findViewById(R.id.txtFilme2);
+        nmShow2 = findViewById(R.id.txtShow2);
+        nmImagem2 = findViewById(R.id.imgPersona2);
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
 
         pesquisa buscaPersonagem = new pesquisa();
-        
-        
+
+        // Define o texto da TextView
+        nmPesquisa.setText(messageDisplay);
 
     }
 
@@ -110,6 +121,7 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+        JSONObject persona = null;
         try {
             // Converte a resposta em Json
             JSONObject jsonObject = new JSONObject(data);
@@ -117,29 +129,44 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             JSONArray itemsArray = jsonObject.getJSONArray("data");
             // inicializa o contador
             int i = 0;
+            int a = 1;
+
             String nome = null;
             String filme = null;
             String show = null;
             String imagem = null;
+
+            String nome2 = null;
+            String filme2 = null;
+            String show2 = null;
+            String imagem2 = null;
+
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
                     (filme == null)) {
                 // Obtem a informação
 
                 Log.v("ERRO APLICAÇÃO", String.valueOf(itemsArray));
-                JSONObject persona = itemsArray.getJSONObject(i);
+                persona = itemsArray.getJSONObject(i);
+                JSONObject persona2 = itemsArray.getJSONObject(a);
 
                 JSONArray volumeInfo = persona.getJSONArray("films");
-                JSONArray showInfo = persona.getJSONArray("tvShows");//
+                JSONArray showInfo = persona.getJSONArray("tvShows");
 
+                JSONArray volumeInfo2 = persona2.getJSONArray("films");
+                JSONArray showInfo2 = persona2.getJSONArray("tvShows");
 
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-                   nome = persona.getString("name");
-                   filme =  volumeInfo.getString(0);
-                   show =  showInfo.getString(0);
-                   imagem = persona.getString("imageUrl");
+                    nome = persona.getString("name");
+                    filme = volumeInfo.getString(0);
+                    show = showInfo.getString(0);
+                    imagem = persona.getString("imageUrl");
+                    imagem2 = persona2.getString("imageUrl");
+                    nome2 = persona2.getString("name");
+                    filme2 = volumeInfo2.getString(0);
+                    show2 = showInfo2.getString(0);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -149,11 +176,16 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             }
             //mostra o resultado qdo possivel.
             if (filme != null) {
-                nmShow.setText("TvShow: " + show);
+                nmShow.setText(show);
+                nmShow2.setText(show2);
                 nmNome.setText(nome);
-                nmFilme.setText("Filme: " + filme);
+                nmNome2.setText(nome2);
+                nmFilme.setText(filme);
+                nmFilme2.setText(filme2);
                 //picasso serve carregar a imagem
                 Picasso.get().load(imagem).into(nmImagem);
+                Picasso.get().load(imagem2).into(nmImagem2);
+
 
             } else {
                 // If none are found, update the UI to show failed results.
@@ -166,8 +198,8 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             //nmFilme.setText("errado");
         }
 
-    }
 
+    }
 
 
     @Override

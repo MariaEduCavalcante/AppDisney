@@ -6,6 +6,278 @@
     android:layout_height="match_parent"
     tools:context=".pesquisa">
 
+    <ScrollView
+        android:layout_width="413dp"
+        android:layout_height="602dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.668">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="294dp"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="#6BFFFFFF"
+                app:cardCornerRadius="15dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgPersona"
+                        android:layout_width="165dp"
+                        android:layout_height="184dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="58dp"
+                        android:layout_marginEnd="208dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.233"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/txtFilme"
+                        android:layout_width="172dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="99dp"
+                        android:layout_marginEnd="20dp"
+                        android:textAlignment="viewStart"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.038"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.525" />
+
+                    <TextView
+                        android:id="@+id/txtNome"
+                        android:layout_width="354dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="21dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/azul"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.038"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.525" />
+
+                    <TextView
+                        android:id="@+id/txtShow"
+                        android:layout_width="172dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="189dp"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="viewStart"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.045"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.602" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="66dp"
+                        android:layout_marginEnd="139dp"
+                        android:text="Filme:"
+                        android:textColor="@color/azul"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="156dp"
+                        android:layout_marginEnd="117dp"
+                        android:text="TvShow:"
+                        android:textColor="@color/azul"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="294dp"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="#6BFFFFFF"
+                app:cardCornerRadius="15dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgPersona2"
+                        android:layout_width="165dp"
+                        android:layout_height="184dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="58dp"
+                        android:layout_marginEnd="208dp"
+                        android:layout_marginBottom="42dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.233"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginEnd="138dp"
+                        android:text="Filme:"
+                        android:textColor="@color/azul"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txtFilme2"
+                        android:layout_width="172dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="199dp"
+                        android:layout_marginTop="104dp"
+                        android:layout_marginEnd="21dp"
+                        android:layout_marginBottom="154dp"
+                        android:textAlignment="viewStart"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.038"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.525" />
+
+                    <TextView
+                        android:id="@+id/txtNome2"
+                        android:layout_width="349dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="23dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/azul"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.038"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.525" />
+
+                    <TextView
+                        android:id="@+id/txtShow2"
+                        android:layout_width="172dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="202dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="42dp"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="viewStart"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.045"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.602" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="169dp"
+                        android:layout_marginEnd="115dp"
+                        android:text="TvShow:"
+                        android:textColor="@color/azul"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
     <TextView
         android:id="@+id/txtQuizHome3"
         android:layout_width="wrap_content"
@@ -122,89 +394,6 @@
         app:layout_constraintVertical_bias="0.119" />
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="385dp"
-        android:layout_height="464dp"
-        android:layout_margin="17dp"
-        app:cardBackgroundColor="#6BFFFFFF"
-        app:cardCornerRadius="15dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:paddingTop="10dp">
-
-
-            <TextView
-                android:id="@+id/txtNome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:textAlignment="center"
-                android:textColor="@color/vermelho"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.038"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.457" />
-
-
-            <ImageView
-                android:id="@+id/imgPersona"
-                android:layout_width="217dp"
-                android:layout_height="240dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.233"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/txtFilme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.038"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.525" />
-
-            <TextView
-                android:id="@+id/txtShow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.045"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.602"
-                android:gravity="center_horizontal"/>
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
     <ImageButton
         android:id="@+id/btnPesquisar"
         android:layout_width="wrap_content"
@@ -218,8 +407,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.119"
         app:srcCompat="@drawable/lupa" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

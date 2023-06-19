@@ -17,6 +17,7 @@ public class Connection {
     private static final String DISNEY_URL = "https://api.disneyapi.dev/character?";
     // Parametros da string de Busca
     private static final String QUERY_PARAM = "name";
+    private static final String QUERY_PARAM2 = "films";
 
     static String buscaPersona(String queryString) {
         HttpURLConnection urlConnection = null;

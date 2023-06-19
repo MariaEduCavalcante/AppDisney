@@ -8,12 +8,12 @@
     tools:context=".Home">
 
 
-
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -51,25 +51,45 @@
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 
-
         <TextView
             android:id="@+id/txtTitFavoritos"
-            android:layout_width="226dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/PersonagensDia"
             android:textAlignment="center"
             android:textColor="@color/vermelho"
             android:textSize="36sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.129" />
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="218dp"
+            android:layout_height="99dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/fundo"
+                android:onClick="buscaPersonagem"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/studiosdisney" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/fundo"
+                android:onClick="buscaPersonagem2"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/channel" />
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="397dp"
-            android:layout_height="300dp"
+            android:layout_width="wrap_content"
+            android:layout_height="294dp"
             android:layout_margin="17dp"
             app:cardBackgroundColor="#6BFFFFFF"
             app:cardCornerRadius="15dp">
@@ -98,14 +118,14 @@
 
                 <TextView
                     android:id="@+id/txtSugestao"
-                    android:layout_width="161dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="164dp"
+                    android:layout_height="68dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="161dp"
-                    android:layout_marginEnd="22dp"
-                    android:layout_marginBottom="99dp"
+                    android:layout_marginEnd="19dp"
+                    android:layout_marginBottom="65dp"
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="30sp"
@@ -113,16 +133,16 @@
 
                 <TextView
                     android:id="@+id/txtFilmeSugestao"
-                    android:layout_width="352dp"
-                    android:layout_height="34dp"
+                    android:layout_width="331dp"
+                    android:layout_height="39dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="23dp"
                     android:layout_marginTop="26dp"
-                    android:layout_marginEnd="22dp"
-                    android:layout_marginBottom="240dp"
+                    android:layout_marginEnd="19dp"
+                    android:layout_marginBottom="229dp"
                     android:textAlignment="center"
                     android:textColor="@color/vermelho"
                     android:textSize="30sp"
@@ -139,42 +159,11 @@
                     android:text="Personagem:"
                     android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/btnQuiz2"
-                    android:layout_width="130dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="38dp"
-                    android:layout_marginBottom="32dp"
-                    android:backgroundTint="@color/vermelho"
-                    android:onClick="buscaPersonagem"
-                    android:text="@string/btnSugestao"
-                    android:textAlignment="center"
-                    android:textColor="@color/branco"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:iconGravity="top"
-                    app:iconPadding="50sp"
-                    app:iconSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.282" />
-
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
-
-
-
-
-
-
 
 
     <androidx.appcompat.widget.Toolbar

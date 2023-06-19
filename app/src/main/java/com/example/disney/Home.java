@@ -51,9 +51,47 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
 
     public void buscaPersonagem(View view) {
         //define os personagens possiveis
-        String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna", "Troy", "Tarzan", "Pluto", "Lilo", "Rapunzel", "Moana", "Stitch", "Kuzco", "Kuzco", "Koda"};
+        String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna", "Tarzan", "Pluto", "Lilo", "Rapunzel", "Moana", "Stitch", "Koda"};
         //cria uma variavel random
-        int x = new Random().nextInt(14);
+        int x = new Random().nextInt(11);
+        //atribui o valor aleatorio
+        String queryString = personagens[x];
+
+        // Verifica o status da conexão de rede
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = null;
+        if (connMgr != null) {
+            networkInfo = connMgr.getActiveNetworkInfo();
+        }
+        /* Se a rede estiver disponivel e o campo de busca não estiver vazio
+         iniciar o Loader CarregaLivros */
+        if (networkInfo != null && networkInfo.isConnected()
+                && queryString.length() != 0) {
+            Bundle queryBundle = new Bundle();
+            queryBundle.putString("queryString", queryString);
+            int x2 = new Random().nextInt(300);
+            LoaderManager.getInstance(this).restartLoader(x2, queryBundle, this);
+
+
+        }
+        // atualiza a textview para informar que não há conexão ou termo de busca
+        else {
+            if (queryString.length() == 0) {
+                //nmFilme.setText(R.string.str_empty);
+
+            } else {
+                //nmFilme.setText(" ");
+
+            }
+        }
+    }
+
+    public void buscaPersonagem2(View view) {
+        //define os personagens possiveis
+        String[] personagens = {"Troy", "Shane", "Mitchie", "Hannah", "Teddy", "Harper", "Phineas", "Ferb", "Zack", "Tess", "Raven"};
+        //cria uma variavel random
+        int x = new Random().nextInt(11);
         //atribui o valor aleatorio
         String queryString = personagens[x];
 
@@ -119,7 +157,6 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
                 JSONObject persona = itemsArray.getJSONObject(i);
 
                 JSONArray volumeInfo = persona.getJSONArray("films");
-                JSONArray showInfo = persona.getJSONArray("tvShows");//
 
 
                 //  Obter autor e titulo para o item,
