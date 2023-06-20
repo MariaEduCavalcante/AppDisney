@@ -73,7 +73,7 @@
         android:layout_marginEnd="50dp"
         android:background="@drawable/btn_pesquisa"
         android:backgroundTint="@color/azul"
-        android:onClick="Favoritos"
+        android:onClick="QuizNovo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/toolFooter"
         app:layout_constraintHorizontal_bias="0.0"
@@ -106,6 +106,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.011"
         app:srcCompat="@drawable/logo_completa" />
+
+    <ImageView
+        android:id="@+id/imgAdivinha"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/txtTituloQuiz"
@@ -140,7 +152,7 @@
         android:layout_width="167dp"
         android:layout_height="46dp"
         android:backgroundTint="@color/azul"
-        android:onClick="adivinha"
+        android:onClick="Adivinhar"
         android:text="@string/NomeBotaoQUiz"
         android:textColor="@color/branco"
         android:textSize="20sp"
@@ -152,68 +164,77 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.708" />
 
-    <ImageView
-        android:id="@+id/imgAdivinha"
-        android:layout_width="214dp"
-        android:layout_height="219dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304"
-        app:srcCompat="@drawable/olaf" />
-
     <Button
         android:id="@+id/btnIniciar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="54dp"
+        android:layout_height="37dp"
+        android:backgroundTint="@color/azul"
         android:onClick="Iniciar"
-        android:text="Button"
+        app:icon="@drawable/play_1"
+        app:iconGravity="top"
+        app:iconPadding="1sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.599"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.786" />
 
-    <ImageView
-        android:id="@+id/imgCoberta"
-        android:layout_width="215dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="156dp"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
-        android:scaleType="centerCrop"
+    <Button
+        android:id="@+id/btnIniciar2"
+        android:layout_width="55dp"
+        android:layout_height="38dp"
+        android:backgroundTint="@color/azul"
+        android:onClick="QuizNovo"
+        app:icon="@drawable/icons8_reiniciar_32"
+        app:iconGravity="top"
+        app:iconPadding="1sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/fundobranco" />
-
-    <ImageView
-        android:id="@+id/imgCoberta1"
-        android:layout_width="215dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="156dp"
-        android:cropToPadding="false"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fundobranco" />
+        app:layout_constraintVertical_bias="0.787" />
 
     <ImageView
         android:id="@+id/imgCoberta2"
         android:layout_width="215dp"
         android:layout_height="219dp"
-        android:layout_marginTop="156dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304"
+        app:srcCompat="@drawable/fundobranco" />
+
+    <ImageView
+        android:id="@+id/imgCoberta1"
+        android:layout_width="214dp"
+        android:layout_height="156dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271"
+        app:srcCompat="@drawable/fundobranco" />
+
+    <ImageView
+        android:id="@+id/imgCoberta3"
+        android:layout_width="217dp"
+        android:layout_height="86dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241"
         app:srcCompat="@drawable/fundobranco" />
 
 

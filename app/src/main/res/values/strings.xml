@@ -13,24 +13,23 @@
     <string name="voltar">voltar</string>
 
     <string name="Quiz">QUIZ</string>
-    <string name="Vitória">Não sabe o que assistir?</string>
-    <string name="Derrota">Derrotas</string>
+    <string name="Perso">Personagem:</string>
     <string name="PersonagensDia">SUGESTÃO DE FILME</string>
+    <string name="BemVindo">Seja Bem-Vindo,</string>
 
     <string name="Favoritos">FAVORITOS</string>
     <string name="TituloQuiz">QUEM SOU EU?</string>
     <string name="NomeBotaoQUiz">ADIVINHAR</string>
     <string name="NomePersonagem">NOME</string>
 
-    <string name="btnWallpaper">Definir como Wallpaper</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="app_widget_description">This is an app widget description</string>
+    <string name="filme">Filme:</string>
+    <string name="show">TvShow:</string>
+
+    <string name="persoDia">Personagem do dia</string>
 
     <string name="str_empty">empty\n</string>
     <string name="loading">loading\n</string>
     <string name="no_search_term">term</string>
     <string name="no_network">network</string>
     <string name="no_results">results\n</string>
-    <string name="btnSugestao">Sugerir</string>
 </resources>

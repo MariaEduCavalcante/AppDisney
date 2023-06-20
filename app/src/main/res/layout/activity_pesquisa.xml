@@ -124,7 +124,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="66dp"
                         android:layout_marginEnd="139dp"
-                        android:text="Filme:"
+                        android:text="@string/filme"
                         android:textColor="@color/azul"
                         android:textSize="20sp" />
 
@@ -136,7 +136,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="156dp"
                         android:layout_marginEnd="117dp"
-                        android:text="TvShow:"
+                        android:text="@string/show"
                         android:textColor="@color/azul"
                         android:textSize="20sp" />
 

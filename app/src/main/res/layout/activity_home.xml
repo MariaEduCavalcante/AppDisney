@@ -90,7 +90,7 @@
                     android:layout_marginTop="34dp"
                     android:layout_marginEnd="195dp"
                     android:layout_marginBottom="34dp"
-                    android:text="Seja Bem-Vindo,"
+                    android:text="@string/BemVindo"
                     android:textColor="@color/vermelho"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -203,7 +203,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="44dp"
                     android:layout_marginBottom="160dp"
-                    android:text="Personagem:"
+                    android:text="@string/Perso"
                     android:textSize="20sp" />
 
             </RelativeLayout>

@@ -32,25 +32,25 @@ public class Widget extends AppWidgetProvider  {
                     views.setOnClickPendingIntent(R.id.button, pendingIntent);
                     break;
                 case Calendar.TUESDAY:
-                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.bela);
+                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.rapunzel);
                     Intent intent2 = new Intent(context, pesquisa.class);
-                    String message2 = "Bela";
+                    String message2 = "Rapunzel";
                     intent2.putExtra(EXTRA_MESSAGE, message2);
                     PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intent2, PendingIntent.FLAG_IMMUTABLE);
                     views.setOnClickPendingIntent(R.id.button, pendingIntent2);
                     break;
                 case Calendar.WEDNESDAY:
-                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.rapunzel);
+                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.jasmine);
                     Intent intent3 = new Intent(context, pesquisa.class);
-                    String message3 = "Rapunzel";
+                    String message3 = "Jasmine";
                     intent3.putExtra(EXTRA_MESSAGE, message3);
                     PendingIntent pendingIntent3 = PendingIntent.getActivity(context, 0, intent3, PendingIntent.FLAG_IMMUTABLE);
                     views.setOnClickPendingIntent(R.id.button, pendingIntent3);
                     break;
                 case Calendar.THURSDAY:
-                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.cinderela);
+                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.elsa);
                     Intent intent4 = new Intent(context, pesquisa.class);
-                    String message4 = "Cinderella";
+                    String message4 = "Elsa";
                     intent4.putExtra(EXTRA_MESSAGE, message4);
                     PendingIntent pendingIntent4 = PendingIntent.getActivity(context, 0, intent4, PendingIntent.FLAG_IMMUTABLE);
                     views.setOnClickPendingIntent(R.id.button, pendingIntent4);
@@ -64,17 +64,17 @@ public class Widget extends AppWidgetProvider  {
                     views.setOnClickPendingIntent(R.id.button, pendingIntent5);
                     break;
                 case Calendar.SATURDAY:
-                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.jasmine);
+                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.bela);
                     Intent intent6 = new Intent(context, pesquisa.class);
-                    String message6 = "Jasmine";
+                    String message6 = "Bella";
                     intent6.putExtra(EXTRA_MESSAGE, message6);
                     PendingIntent pendingIntent6 = PendingIntent.getActivity(context, 0, intent6, PendingIntent.FLAG_IMMUTABLE);
                     views.setOnClickPendingIntent(R.id.button, pendingIntent6);
                     break;
                 case Calendar.SUNDAY:
-                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.elsa);
+                    views.setImageViewResource(R.id.imgPersonaWidget, R.drawable.cinderela);
                     Intent intent7 = new Intent(context, pesquisa.class);
-                    String message7 = "Elsa";
+                    String message7 = "Cinderela";
                     intent7.putExtra(EXTRA_MESSAGE, message7);
                     PendingIntent pendingIntent7 = PendingIntent.getActivity(context, 0, intent7, PendingIntent.FLAG_IMMUTABLE);
                     views.setOnClickPendingIntent(R.id.button, pendingIntent7);

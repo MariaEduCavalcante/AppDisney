@@ -214,7 +214,7 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         startActivity(intent);
     }
     public void Favoritos(View view) {
-        Intent intent = new Intent (getApplicationContext(), Favoritos.class);
+        Intent intent = new Intent (getApplicationContext(), quiz.class);
         startActivity(intent);
     }
 }

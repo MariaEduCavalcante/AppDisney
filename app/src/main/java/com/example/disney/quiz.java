@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -30,7 +31,7 @@ import java.util.Random;
 public class quiz extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private ImageView nmImagem;
-    private ImageView nmCoberta;
+    private ImageView nmCoberta3;
     private ImageView nmCoberta1;
     private ImageView nmCoberta2;
 
@@ -43,6 +44,7 @@ public class quiz extends AppCompatActivity implements LoaderManager.LoaderCallb
 
         setContentView(R.layout.activity_quiz);
         nmImagem = findViewById(R.id.imgAdivinha);
+        nmResposta = findViewById(R.id.editTxtQuiz);
 
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
@@ -56,28 +58,32 @@ public class quiz extends AppCompatActivity implements LoaderManager.LoaderCallb
 
     }
 
-    public void Adivinhar(){
-        nmCoberta = findViewById(R.id.imgCoberta);
+    //define os personagens possiveis
+    String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna", "Pluto", "Rapunzel", "Moana", "Stitch", "Koda", "Phineas", "Ferb", "Bella"};
+    //cria uma variavel random
+    int x = new Random().nextInt(12);
+    //atribui o valor aleatorio
+    String queryString = personagens[x];
+    // esconde o teclado qdo o botão é clicado
+
+    public void Adivinhar(View view){
+        nmCoberta3 = findViewById(R.id.imgCoberta3);
         nmCoberta1 = findViewById(R.id.imgCoberta1);
         nmCoberta2 = findViewById(R.id.imgCoberta2);
         String resposta = nmResposta.getText().toString();
 
-        if(resposta != queryString){
+        if(resposta.equals(queryString)){
+            nmCoberta3.setVisibility(View.INVISIBLE);
             nmCoberta1.setVisibility(View.INVISIBLE);
+            Toast.makeText(quiz.this, "Parabéns!!", Toast.LENGTH_SHORT).show();
         } else{
-            nmCoberta.setVisibility(View.INVISIBLE);
+            nmCoberta3.setVisibility(View.VISIBLE);
             nmCoberta1.setVisibility(View.INVISIBLE);
+            Toast.makeText(quiz.this, "Tente novamente!!", Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    //define os personagens possiveis
-    String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna"};
-    //cria uma variavel random
-    int x = new Random().nextInt(4);
-    //atribui o valor aleatorio
-    String queryString = personagens[x];
-    // esconde o teclado qdo o botão é clicado
 
     public void Iniciar(View view) {
 
@@ -216,12 +222,12 @@ public class quiz extends AppCompatActivity implements LoaderManager.LoaderCallb
         Intent intent = new Intent (getApplicationContext(), pesquisa.class);
         startActivity(intent);
     }
-    public void Home(View view) {
-        Intent intent = new Intent (getApplicationContext(), Home.class);
+    public void QuizNovo(View view) {
+        Intent intent = new Intent (getApplicationContext(), quiz.class);
         startActivity(intent);
     }
-    public void Favoritos(View view) {
-        Intent intent = new Intent (getApplicationContext(), Favoritos.class);
+    public void Home(View view) {
+        Intent intent = new Intent (getApplicationContext(), Home.class);
         startActivity(intent);
     }
 }
