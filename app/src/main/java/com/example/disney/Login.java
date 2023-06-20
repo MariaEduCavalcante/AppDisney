@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
+    public final static String EXTRA_MESSAGE = ".MESSAGE";
+
     EditText username, password;
     Button btnlogin;
     DBhelper DB;
@@ -42,8 +44,10 @@ public class Login extends AppCompatActivity {
                 else{
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass == true){
+                        Intent intent = new Intent(getApplicationContext(), Home.class);
+                        String message = user;
+                        intent.putExtra(EXTRA_MESSAGE, message);
                         Toast.makeText(Login.this, "Logado com sucesso", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent (getApplicationContext(), Home.class);
                         startActivity(intent);
 
                     }else {

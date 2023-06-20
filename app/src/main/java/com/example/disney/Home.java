@@ -29,7 +29,7 @@ import java.util.Random;
 public class Home extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private ImageView nmImagem;
-    private TextView nmNome, nmFilme;
+    private TextView nmNome, nmFilme, nmLogin;
 
 
     @SuppressLint("MissingInflatedId")
@@ -37,9 +37,15 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        nmImagem = findViewById(R.id.imgRandom1);
+
+        // Recebe a informação da intent anterior
+        Intent intentDisplay = getIntent();
+        String messageDisplay = intentDisplay.getStringExtra(Widget.EXTRA_MESSAGE);
+
+        nmImagem = findViewById(R.id.imgRandom);
         nmNome = findViewById(R.id.txtSugestao);
         nmFilme = findViewById(R.id.txtFilmeSugestao);
+        nmLogin = findViewById(R.id.txtNomeLogin);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -47,6 +53,10 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
+
+        // Define o texto da TextView
+        nmLogin.setText(messageDisplay);
+
     }
 
     public void buscaPersonagem(View view) {
