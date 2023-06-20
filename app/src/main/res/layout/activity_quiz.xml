@@ -175,12 +175,12 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
+        app:layout_constraintVertical_bias="0.802" />
 
     <ImageView
         android:id="@+id/imgCoberta"
-        android:layout_width="214dp"
-        android:layout_height="190dp"
+        android:layout_width="215dp"
+        android:layout_height="110dp"
         android:layout_marginTop="156dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
@@ -190,6 +190,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/fundobranco" />
+
+    <ImageView
+        android:id="@+id/imgCoberta1"
+        android:layout_width="215dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="156dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fundobranco" />
+
+    <ImageView
+        android:id="@+id/imgCoberta2"
+        android:layout_width="215dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="156dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fundobranco" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

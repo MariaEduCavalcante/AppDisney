@@ -201,6 +201,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
         }
     }
 
+
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
         // obrigatório implementar, nenhuma ação executada

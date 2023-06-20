@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -29,6 +30,11 @@ import java.util.Random;
 public class quiz extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private ImageView nmImagem;
+    private ImageView nmCoberta;
+    private ImageView nmCoberta1;
+    private ImageView nmCoberta2;
+
+    private EditText nmResposta;
 
 
     @Override
@@ -50,14 +56,33 @@ public class quiz extends AppCompatActivity implements LoaderManager.LoaderCallb
 
     }
 
+    public void Adivinhar(){
+        nmCoberta = findViewById(R.id.imgCoberta);
+        nmCoberta1 = findViewById(R.id.imgCoberta1);
+        nmCoberta2 = findViewById(R.id.imgCoberta2);
+        String resposta = nmResposta.getText().toString();
+
+        if(resposta != queryString){
+            nmCoberta1.setVisibility(View.INVISIBLE);
+        } else{
+            nmCoberta.setVisibility(View.INVISIBLE);
+            nmCoberta1.setVisibility(View.INVISIBLE);
+        }
+
+    }
+
+    //define os personagens possiveis
+    String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna"};
+    //cria uma variavel random
+    int x = new Random().nextInt(4);
+    //atribui o valor aleatorio
+    String queryString = personagens[x];
+    // esconde o teclado qdo o botão é clicado
+
     public void Iniciar(View view) {
-        //define os personagens possiveis
-        String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna"};
-        //cria uma variavel random
-        int x = new Random().nextInt(4);
-        //atribui o valor aleatorio
-        String queryString = personagens[x];
-        // esconde o teclado qdo o botão é clicado
+
+        nmCoberta2 = findViewById(R.id.imgCoberta2);
+
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputManager != null) {
@@ -92,6 +117,8 @@ public class quiz extends AppCompatActivity implements LoaderManager.LoaderCallb
 
             }
         }
+
+        nmCoberta2.setVisibility(View.INVISIBLE);
     }
 
 
