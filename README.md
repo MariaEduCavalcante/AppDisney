@@ -2,7 +2,7 @@
 
 > Projeto desenvolvido por Adriel Massagli e Maria Eduarda Cavalcante.
 
-Aplicativo sobre os personagens da Disney, contendo a possibilidade de pesquisa, testes e outras funções, desenvolvido com base na Disney API.
+Aplicativo sobre os personagens da Disney e músicas dos filmes, contendo a possibilidade de pesquisa, testes e outras funções, desenvolvido com base em API.
 
 `Vídeo de funcionamento:`[YouTube](https://youtu.be/u-XHhvlUD8M)
 
