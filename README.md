@@ -1,7 +1,7 @@
 ## Atualizações do Aplicativo - 3° Bimestre
 > Desenvolvido por Maria Eduarda Cavalcante
 
-* [Documentação - Nova API](https://github.com/MariaEduCavalcante/AppDisney/wiki/M%C3%BAsicas-Disney-%E2%80%90-API)
+* [Nova API (Musica Disney](https://github.com/MariaEduCavalcante/MusicaDisneyAPI)
 * [Mudanças no aplicativo](https://github.com/MariaEduCavalcante/AppDisney/wiki/Escopo-de-Atualiza%C3%A7%C3%B5es)
 
 ***
