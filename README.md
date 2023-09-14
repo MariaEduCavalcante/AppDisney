@@ -5,6 +5,9 @@
 * [Mudanças no aplicativo](https://github.com/MariaEduCavalcante/AppDisney/wiki/Escopo-de-Atualiza%C3%A7%C3%B5es)
 * [Funcionamento]()
 
+### Observação:
+* A API do 2° Bimestre está fora do ar no momento
+
 ***
 
 # Disney
