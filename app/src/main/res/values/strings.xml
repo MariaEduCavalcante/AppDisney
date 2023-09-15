@@ -22,8 +22,8 @@
     <string name="NomeBotaoQUiz">ADIVINHAR</string>
     <string name="NomePersonagem">NOME</string>
 
-    <string name="filme">Filme:</string>
-    <string name="show">TvShow:</string>
+    <string name="filme">Sobrenome:</string>
+    <string name="show">Data de Nascimento:</string>
 
     <string name="persoDia">Personagem do dia</string>
 

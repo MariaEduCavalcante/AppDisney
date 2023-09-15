@@ -15,8 +15,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -29,7 +31,7 @@ import java.util.Random;
 public class Home extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private ImageView nmImagem;
-    private TextView nmNome, nmFilme, nmLogin;
+    private TextView nmNome, nmLogin;
 
 
     @SuppressLint("MissingInflatedId")
@@ -44,7 +46,6 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
 
         nmImagem = findViewById(R.id.imgRandom);
         nmNome = findViewById(R.id.txtSugestao);
-        nmFilme = findViewById(R.id.txtFilmeSugestao);
         nmLogin = findViewById(R.id.txtNomeLogin);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -61,11 +62,19 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
 
     public void buscaPersonagem(View view) {
         //define os personagens possiveis
-        String[] personagens = {"Ariel", "Pumbaa", "Elsa", "Anna", "Tarzan", "Pluto", "Lilo", "Rapunzel", "Moana", "Stitch", "Koda"};
+        String[] personagens = {"Ratatouille", "Ratatouille"};
         //cria uma variavel random
-        int x = new Random().nextInt(11);
+        int x = new Random().nextInt(2);
         //atribui o valor aleatorio
         String queryString = personagens[x];
+
+        // esconde o teclado qdo o botão é clicado
+        InputMethodManager inputManager = (InputMethodManager)
+                getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputManager != null) {
+            inputManager.hideSoftInputFromWindow(view.getWindowToken(),
+                    InputMethodManager.HIDE_NOT_ALWAYS);
+        }
 
         // Verifica o status da conexão de rede
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -80,57 +89,16 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
                 && queryString.length() != 0) {
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
-            int x2 = new Random().nextInt(300);
-            LoaderManager.getInstance(this).restartLoader(x2, queryBundle, this);
+            LoaderManager.getInstance(this).restartLoader(0, queryBundle, this);
 
 
         }
         // atualiza a textview para informar que não há conexão ou termo de busca
         else {
             if (queryString.length() == 0) {
-                //nmFilme.setText(R.string.str_empty);
-
+                Toast.makeText(Home.this, "Termo inválido", Toast.LENGTH_SHORT).show();
             } else {
-                //nmFilme.setText(" ");
-
-            }
-        }
-    }
-
-    public void buscaPersonagem2(View view) {
-        //define os personagens possiveis
-        String[] personagens = {"Troy", "Shane", "Mitchie", "Hannah", "Teddy", "Harper", "Phineas", "Ferb", "Zack", "Tess", "Raven"};
-        //cria uma variavel random
-        int x = new Random().nextInt(11);
-        //atribui o valor aleatorio
-        String queryString = personagens[x];
-
-        // Verifica o status da conexão de rede
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = null;
-        if (connMgr != null) {
-            networkInfo = connMgr.getActiveNetworkInfo();
-        }
-        /* Se a rede estiver disponivel e o campo de busca não estiver vazio
-         iniciar o Loader CarregaLivros */
-        if (networkInfo != null && networkInfo.isConnected()
-                && queryString.length() != 0) {
-            Bundle queryBundle = new Bundle();
-            queryBundle.putString("queryString", queryString);
-            int x2 = new Random().nextInt(300);
-            LoaderManager.getInstance(this).restartLoader(x2, queryBundle, this);
-
-
-        }
-        // atualiza a textview para informar que não há conexão ou termo de busca
-        else {
-            if (queryString.length() == 0) {
-                //nmFilme.setText(R.string.str_empty);
-
-            } else {
-                //nmFilme.setText(" ");
-
+                Toast.makeText(Home.this, "Verifique a conexão", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -147,34 +115,32 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+        JSONObject persona = null;
         try {
             // Converte a resposta em Json
             JSONObject jsonObject = new JSONObject(data);
             // Obtem o JSONArray dos itens de livros
-            JSONArray itemsArray = jsonObject.getJSONArray("data");
+            JSONArray itemsArray = jsonObject.getJSONArray("results");
             // inicializa o contador
             int i = 0;
 
             String nome = null;
             String imagem = null;
-            String filme = null;
+
+
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
                     (nome == null)) {
                 // Obtem a informação
 
                 Log.v("ERRO APLICAÇÃO", String.valueOf(itemsArray));
-                JSONObject persona = itemsArray.getJSONObject(i);
-
-                JSONArray volumeInfo = persona.getJSONArray("films");
-
+                persona = itemsArray.getJSONObject(i);
 
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-                    nome = persona.getString("name");
-                    imagem = persona.getString("imageUrl");
-                    filme = volumeInfo.getString(0);
+                    nome = persona.getString("title");
+                    imagem = persona.getString("image");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -184,21 +150,27 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
             }
             //mostra o resultado qdo possivel.
             if (nome != null) {
+
+                //     nmShow2.setText(show2);
+                nmNome.setText(nome);
+                // nmNome2.setText(nome2);
+
+                // nmFilme2.setText(filme2);
                 //picasso serve carregar a imagem
                 Picasso.get().load(imagem).into(nmImagem);
-                nmNome.setText(nome);
-                nmFilme.setText(filme);
+                // Picasso.get().load(imagem2).into(nmImagem2);
+
 
             } else {
-                // If none are found, update the UI to show failed results.
-                //nmNome.setText("resultado");
-                //nmFilme.setText("falho");
+                Toast.makeText(Home.this, "Resultado não encontrado", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             // Se não receber um JSOn valido, informa ao usuário
             //nmNome.setText("deu");
             //nmFilme.setText("errado");
         }
+
+
     }
 
 
@@ -206,6 +178,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
     public void onLoaderReset(@NonNull Loader<String> loader) {
         // obrigatório implementar, nenhuma ação executada
     }
+
 
 
     public void Quiz(View view) {

@@ -53,10 +53,6 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         nmShow = findViewById(R.id.txtShow);
         nmImagem = findViewById(R.id.imgPersona);
 
-        nmNome2 = findViewById(R.id.txtNome2);
-        nmFilme2 = findViewById(R.id.txtFilme2);
-        nmShow2 = findViewById(R.id.txtShow2);
-        nmImagem2 = findViewById(R.id.imgPersona2);
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
@@ -123,47 +119,27 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             // Converte a resposta em Json
             JSONObject jsonObject = new JSONObject(data);
             // Obtem o JSONArray dos itens de livros
-            JSONArray itemsArray = jsonObject.getJSONArray("data");
+            JSONArray itemsArray = jsonObject.getJSONArray("results");
             // inicializa o contador
             int i = 0;
-            int a = 1;
 
             String nome = null;
-            String filme = null;
-            String show = null;
             String imagem = null;
 
-            String nome2 = null;
-            String filme2 = null;
-            String show2 = null;
-            String imagem2 = null;
 
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
-                    (filme == null)) {
+                    (nome == null)) {
                 // Obtem a informação
 
                 Log.v("ERRO APLICAÇÃO", String.valueOf(itemsArray));
                 persona = itemsArray.getJSONObject(i);
-                JSONObject persona2 = itemsArray.getJSONObject(a);
-
-                JSONArray volumeInfo = persona.getJSONArray("films");
-                JSONArray showInfo = persona.getJSONArray("tvShows");
-
-                JSONArray volumeInfo2 = persona2.getJSONArray("films");
-                JSONArray showInfo2 = persona2.getJSONArray("tvShows");
 
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-                    nome = persona.getString("name");
-                    filme = volumeInfo.getString(0);
-                    show = showInfo.getString(0);
-                    imagem = persona.getString("imageUrl");
-                    imagem2 = persona2.getString("imageUrl");
-                    nome2 = persona2.getString("name");
-                    filme2 = volumeInfo2.getString(0);
-                    show2 = showInfo2.getString(0);
+                    nome = persona.getString("title");
+                    imagem = persona.getString("image");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -172,16 +148,16 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
                 i++;
             }
             //mostra o resultado qdo possivel.
-            if (filme != null) {
-                nmShow.setText(show);
-                nmShow2.setText(show2);
+            if (nome != null) {
+
+           //     nmShow2.setText(show2);
                 nmNome.setText(nome);
-                nmNome2.setText(nome2);
-                nmFilme.setText(filme);
-                nmFilme2.setText(filme2);
+               // nmNome2.setText(nome2);
+
+               // nmFilme2.setText(filme2);
                 //picasso serve carregar a imagem
                 Picasso.get().load(imagem).into(nmImagem);
-                Picasso.get().load(imagem2).into(nmImagem2);
+               // Picasso.get().load(imagem2).into(nmImagem2);
 
 
             } else {

@@ -14,10 +14,10 @@ public class Connection {
     private static final String LOG_TAG = Connection.class.getSimpleName();
     // Constantes utilizadas pela API
     // URL para a API de Livros do Google.
-    private static final String DISNEY_URL = "https://api.disneyapi.dev/character?";
+    private static final String FOOD_URL = "https://api.spoonacular.com/recipes/complexSearch?";
     // Parametros da string de Busca
-    private static final String QUERY_PARAM = "name";
-    private static final String QUERY_PARAM2 = "films";
+    private static final String QUERY_PARAM = "apiKey";
+    private static final String QUERY_PARAM2 = "titleMatch";
 
     static String buscaPersona(String queryString) {
         HttpURLConnection urlConnection = null;
@@ -25,8 +25,9 @@ public class Connection {
         String personaJSONString = null;
         try {
             // Construção da URI de Busca
-            Uri builtURI = Uri.parse(DISNEY_URL).buildUpon()
-                    .appendQueryParameter(QUERY_PARAM, queryString)
+            Uri builtURI = Uri.parse(FOOD_URL).buildUpon()
+                    .appendQueryParameter(QUERY_PARAM, "d1f50efe461c4950b8ecd3ebb9b6e8d6")
+                    .appendQueryParameter(QUERY_PARAM2, queryString)
                     .build();
             // Converte a URI para a URL.
             URL requestURL = new URL(builtURI.toString());
