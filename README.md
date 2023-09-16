@@ -5,7 +5,7 @@
 
 ## Documentações
 * [API Desenvolvida - Musica Disney](https://github.com/MariaEduCavalcante/MusicaDisneyAPI)
-* [API Substituta - Food API]()
+* [API Substituta - Food API](https://github.com/MariaEduCavalcante/AppDisney/wiki/An%C3%A1lise-%E2%80%90-Food-API)
 * [Mudanças no aplicativo - Escopo](https://github.com/MariaEduCavalcante/AppDisney/wiki/Escopo-de-Atualiza%C3%A7%C3%B5es)
 
 ### Observação:
