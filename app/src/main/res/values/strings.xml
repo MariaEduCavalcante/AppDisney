@@ -13,9 +13,10 @@
     <string name="voltar">voltar</string>
 
     <string name="Quiz">QUIZ</string>
-    <string name="Perso">Personagem:</string>
-    <string name="PersonagensDia">SUGESTÃO DE FILME</string>
-    <string name="BemVindo">Seja Bem-Vindo,</string>
+    <string name="Perso">Filme de aparição:</string>
+    <string name="musicas">Músicas</string>
+    <string name="PersonagensDia">LISTAS</string>
+    <string name="Comida">PRATOS DOS FILMES</string>
 
     <string name="Favoritos">FAVORITOS</string>
     <string name="TituloQuiz">QUEM SOU EU?</string>

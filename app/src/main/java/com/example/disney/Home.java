@@ -31,7 +31,7 @@ import java.util.Random;
 public class Home extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private ImageView nmImagem;
-    private TextView nmNome, nmLogin;
+    private TextView nmNome, nmComida;
 
 
     @SuppressLint("MissingInflatedId")
@@ -40,13 +40,9 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Recebe a informação da intent anterior
-        Intent intentDisplay = getIntent();
-        String messageDisplay = intentDisplay.getStringExtra(Widget.EXTRA_MESSAGE);
-
         nmImagem = findViewById(R.id.imgRandom);
         nmNome = findViewById(R.id.txtSugestao);
-        nmLogin = findViewById(R.id.txtNomeLogin);
+        nmComida = findViewById(R.id.txtFilmeSugestao);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -55,18 +51,17 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
 
-        // Define o texto da TextView
-        nmLogin.setText(messageDisplay);
-
     }
 
     public void buscaPersonagem(View view) {
         //define os personagens possiveis
-        String[] personagens = {"Ratatouille", "Ratatouille"};
+        String[] pratos = {"Ratatouille", "Spaghetti With Meatballs", "Peach Pie", "Gumbo", "Cheese souffle", "Granita"};
+        String[] personagens = {"Ratatouille", "A Dama e o Vagabundo", "A Branca de Neve", "Princesa e o Sapo", "Bela e a Fera", "Monstros S.A"};
         //cria uma variavel random
-        int x = new Random().nextInt(2);
+        int x = new Random().nextInt(6);
         //atribui o valor aleatorio
-        String queryString = personagens[x];
+        String queryString = pratos[x];
+        nmNome.setText(personagens[x]);
 
         // esconde o teclado qdo o botão é clicado
         InputMethodManager inputManager = (InputMethodManager)
@@ -124,13 +119,13 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
             // inicializa o contador
             int i = 0;
 
-            String nome = null;
+            String comida = null;
             String imagem = null;
 
 
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
-                    (nome == null)) {
+                    (comida == null)) {
                 // Obtem a informação
 
                 Log.v("ERRO APLICAÇÃO", String.valueOf(itemsArray));
@@ -139,7 +134,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-                    nome = persona.getString("title");
+                    comida = persona.getString("title");
                     imagem = persona.getString("image");
 
                 } catch (JSONException e) {
@@ -149,10 +144,10 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
                 i++;
             }
             //mostra o resultado qdo possivel.
-            if (nome != null) {
+            if (comida != null) {
 
                 //     nmShow2.setText(show2);
-                nmNome.setText(nome);
+                nmComida.setText(comida);
                 // nmNome2.setText(nome2);
 
                 // nmFilme2.setText(filme2);
@@ -194,7 +189,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
         startActivity(intent);
     }
     public void Favoritos(View view) {
-        Intent intent = new Intent (getApplicationContext(), Favoritos.class);
+        Intent intent = new Intent (getApplicationContext(), Playlist.class);
         startActivity(intent);
     }
 }
