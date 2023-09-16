@@ -53,11 +53,90 @@
             android:id="@+id/txtTitFavoritos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/PersonagensDia"
+            android:text="PLAYLIST"
             android:textAlignment="center"
             android:textColor="@color/azul"
             android:textSize="36sp"
             android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="94dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/layout_shadow_white"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnmusica1"
+                    android:layout_width="123dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="225dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/azul"
+                    android:onClick="Iniciar"
+                    app:icon="@drawable/play_1"
+                    app:iconGravity="top"
+                    app:iconPadding="1sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.599"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.786" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica1"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="114dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    android:text="NameMúsica" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="29dp"
+                    android:text="1"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="145dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="duração"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -73,15 +152,15 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnIniciar4"
+                    android:id="@+id/btnmusica2"
                     android:layout_width="123dp"
                     android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="21dp"
-                    android:layout_marginEnd="105dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="225dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_toEndOf="@+id/imageView"
                     android:backgroundTint="@color/azul"
                     android:onClick="Iniciar"
                     app:icon="@drawable/play_1"
@@ -94,50 +173,311 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.786" />
 
-                <TextView
-                    android:id="@+id/txtHomelogo"
-                    android:layout_width="161dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="35dp"
-                    android:layout_marginTop="17dp"
-                    android:layout_marginEnd="53dp"
-                    android:layout_marginBottom="51dp"
-                    android:layout_toEndOf="@+id/imageView"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:editable="true"
-                    android:text="@string/musicas"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="110dp"
-                    android:layout_height="83dp"
+                <EditText
+                    android:id="@+id/txtNomeMusica2"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="4dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="114dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    android:text="NameMúsica" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="29dp"
+                    android:text="2"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="145dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="duração"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/btnRegistrar2"
-            android:layout_width="167dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="94dp"
+            android:layout_margin="17dp"
+            android:background="@drawable/layout_shadow_white"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnmusica3"
+                    android:layout_width="123dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="225dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/azul"
+                    android:onClick="Iniciar"
+                    app:icon="@drawable/play_1"
+                    app:iconGravity="top"
+                    app:iconPadding="1sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.599"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.786" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica3"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="114dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    android:text="NameMúsica" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="29dp"
+                    android:text="3"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="145dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="duração"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="94dp"
+            android:layout_margin="17dp"
+            android:background="@drawable/layout_shadow_white"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnmusica4"
+                    android:layout_width="123dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="225dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/azul"
+                    android:onClick="Iniciar"
+                    app:icon="@drawable/play_1"
+                    app:iconGravity="top"
+                    app:iconPadding="1sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.599"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.786" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica4"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="114dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    android:text="NameMúsica" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="29dp"
+                    android:text="4"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="145dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="duração"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="94dp"
+            android:layout_margin="17dp"
+            android:background="@drawable/layout_shadow_white"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnmusica5"
+                    android:layout_width="123dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="225dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/azul"
+                    android:onClick="Iniciar"
+                    app:icon="@drawable/play_1"
+                    app:iconGravity="top"
+                    app:iconPadding="1sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.599"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.786" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica5"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="114dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    android:text="NameMúsica" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="29dp"
+                    android:text="5"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/textView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="145dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="duração"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="46dp"
-            android:backgroundTint="@color/azul"
-            android:onClick="Adivinhar"
-            android:text="@string/NomeBotaoQUiz"
-            android:textColor="@color/branco"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnRegistrar2"
+                android:layout_width="167dp"
+                android:layout_height="46dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="133dp"
+                android:layout_marginEnd="133dp"
+                android:backgroundTint="@color/azul"
+                android:onClick="Alterar"
+                android:text="Alterar"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnRegistrar4"
+                android:layout_width="167dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="133dp"
+                android:layout_marginEnd="133dp"
+                android:backgroundTint="@color/azul"
+                android:onClick="Alterar"
+                android:text="Salvar"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
 
     </LinearLayout>

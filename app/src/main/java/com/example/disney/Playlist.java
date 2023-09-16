@@ -6,8 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Playlist extends AppCompatActivity {
+    private TextView nmDuracao;
+    private EditText nmMusica;
+    private Button btnSalvar, btnAlterar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +22,8 @@ public class Playlist extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
     }
 
 
