@@ -17,6 +17,20 @@
         android:theme="@style/Theme.Disney"
         tools:targetApi="31">
         <activity
+            android:name=".Filmes"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Albuns"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Playlist"
             android:exported="false">
             <meta-data

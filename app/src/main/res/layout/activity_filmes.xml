@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Filmes">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolHead"
+            android:layout_width="425dp"
+            android:layout_height="62dp"
+            android:background="@color/vermelho"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="390dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgLogoHome"
+                    android:layout_width="70dp"
+                    android:layout_height="54dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.011"
+                    app:srcCompat="@drawable/logo_completa" />
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/txtTitFavoritos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FILMES"
+            android:textAlignment="center"
+            android:textColor="@color/vermelho"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="556dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="294dp"
+                    android:layout_margin="17dp"
+                    android:background="@drawable/layout_shadow_white"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCover1"
+                            android:layout_width="145dp"
+                            android:layout_height="242dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="34dp"
+                            android:layout_marginEnd="5px"
+                            android:layout_marginBottom="19dp"
+                            android:adjustViewBounds="false"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/txtFilmeSugestao"
+                            android:layout_width="190dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="176dp"
+                            android:layout_marginTop="22dp"
+                            android:layout_marginEnd="11dp"
+                            android:layout_marginBottom="236dp"
+                            android:text="nome"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="173dp"
+                            android:layout_marginBottom="208dp"
+                            android:text="0.0"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="85dp"
+                            android:layout_marginBottom="165dp"
+                            android:text="NomeDiretor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="166dp"
+                            android:layout_marginBottom="135dp"
+                            android:text="ano"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="357dp"
+                            android:layout_marginBottom="260dp"
+                            android:text="1"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="294dp"
+                    android:layout_margin="17dp"
+                    android:background="@drawable/layout_shadow_white"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCover2"
+                            android:layout_width="145dp"
+                            android:layout_height="242dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="34dp"
+                            android:layout_marginEnd="5px"
+                            android:layout_marginBottom="19dp"
+                            android:adjustViewBounds="false"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/txtFilmeSugestao1"
+                            android:layout_width="190dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="176dp"
+                            android:layout_marginTop="22dp"
+                            android:layout_marginEnd="11dp"
+                            android:layout_marginBottom="236dp"
+                            android:text="nome"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="173dp"
+                            android:layout_marginBottom="208dp"
+                            android:text="0.0"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView111"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="85dp"
+                            android:layout_marginBottom="165dp"
+                            android:text="NomeDiretor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="166dp"
+                            android:layout_marginBottom="135dp"
+                            android:text="ano"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView1111"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="357dp"
+                            android:layout_marginBottom="260dp"
+                            android:text="1"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="294dp"
+                    android:layout_margin="17dp"
+                    android:background="@drawable/layout_shadow_white"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCover3"
+                            android:layout_width="145dp"
+                            android:layout_height="242dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="34dp"
+                            android:layout_marginEnd="5px"
+                            android:layout_marginBottom="19dp"
+                            android:adjustViewBounds="false"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/txtFilmeSugestao3"
+                            android:layout_width="190dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="176dp"
+                            android:layout_marginTop="22dp"
+                            android:layout_marginEnd="11dp"
+                            android:layout_marginBottom="236dp"
+                            android:text="nome"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="173dp"
+                            android:layout_marginBottom="208dp"
+                            android:text="0.0"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView333"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="85dp"
+                            android:layout_marginBottom="165dp"
+                            android:text="NomeDiretor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView3333"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="166dp"
+                            android:layout_marginBottom="135dp"
+                            android:text="ano"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="357dp"
+                            android:layout_marginBottom="260dp"
+                            android:text="1"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="294dp"
+                    android:layout_margin="17dp"
+                    android:background="@drawable/layout_shadow_white"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCover4"
+                            android:layout_width="145dp"
+                            android:layout_height="242dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="34dp"
+                            android:layout_marginEnd="5px"
+                            android:layout_marginBottom="19dp"
+                            android:adjustViewBounds="false"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/txtFilmeSugestao04"
+                            android:layout_width="190dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="176dp"
+                            android:layout_marginTop="22dp"
+                            android:layout_marginEnd="11dp"
+                            android:layout_marginBottom="236dp"
+                            android:text="nome"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="173dp"
+                            android:layout_marginBottom="208dp"
+                            android:text="0.0"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView44"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="85dp"
+                            android:layout_marginBottom="165dp"
+                            android:text="NomeDiretor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView444"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="166dp"
+                            android:layout_marginBottom="135dp"
+                            android:text="ano"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView404"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="357dp"
+                            android:layout_marginBottom="260dp"
+                            android:text="1"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="294dp"
+                    android:layout_margin="17dp"
+                    android:background="@drawable/layout_shadow_white"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCover5"
+                            android:layout_width="145dp"
+                            android:layout_height="242dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="34dp"
+                            android:layout_marginEnd="5px"
+                            android:layout_marginBottom="19dp"
+                            android:adjustViewBounds="false"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/txtFilmeSugestao5"
+                            android:layout_width="190dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="176dp"
+                            android:layout_marginTop="22dp"
+                            android:layout_marginEnd="11dp"
+                            android:layout_marginBottom="236dp"
+                            android:text="nome"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView05"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="173dp"
+                            android:layout_marginBottom="208dp"
+                            android:text="0.0"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView55"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="85dp"
+                            android:layout_marginBottom="165dp"
+                            android:text="NomeDiretor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView555"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="166dp"
+                            android:layout_marginBottom="135dp"
+                            android:text="ano"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView505"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="357dp"
+                            android:layout_marginBottom="260dp"
+                            android:text="1"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="98dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/layout_shadow_white"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnmusica1"
+                    android:layout_width="123dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginEnd="129dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/vermelho"
+                    android:onClick="Iniciar"
+                    android:text="Salvar"
+                    app:icon="@drawable/play_1"
+                    app:iconPadding="1sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.599"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.786" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica1"
+                    android:layout_width="162dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="191dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:hint="Nota"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica"
+                    android:layout_width="162dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="192dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="23dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:hint="Id do Filme"
+                    android:inputType="textPersonName" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolFooter4"
+        android:layout_width="411dp"
+        android:layout_height="70dp"
+        android:background="@color/vermelho"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/btnQuiz4"
+        android:layout_width="62dp"
+        android:layout_height="67dp"
+        android:background="@drawable/btn_pesquisa"
+        android:backgroundTint="@color/vermelho"
+        android:onClick="Quiz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/btn_quiz" />
+
+    <ImageButton
+        android:id="@+id/btnPesquisa4"
+        android:layout_width="62dp"
+        android:layout_height="67dp"
+        android:background="@drawable/btn_pesquisa"
+        android:backgroundTint="@color/vermelho"
+        android:onClick="Pesquisa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/btn_pesquisa" />
+
+    <ImageButton
+        android:id="@+id/btnHome4"
+        android:layout_width="62dp"
+        android:layout_height="67dp"
+        android:backgroundTint="@color/vermelho"
+        android:onClick="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/btn_home" />
+</androidx.constraintlayout.widget.ConstraintLayout>

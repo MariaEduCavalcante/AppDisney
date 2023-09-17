@@ -73,7 +73,7 @@
                     android:layout_marginEnd="124dp"
                     android:layout_marginBottom="12dp"
                     android:backgroundTint="@color/vermelho"
-                    android:onClick="Iniciar"
+                    android:onClick="Albuns"
                     app:icon="@drawable/play_1"
                     app:iconGravity="top"
                     app:iconPadding="1sp"
@@ -144,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/fundo"
-                android:onClick="buscaPersonagem"
+                android:onClick="Anima"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/studiosdisney" />
 
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/fundo"
-                android:onClick="buscaPersonagem2"
+                android:onClick="Live"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/channel" />
         </LinearLayout>

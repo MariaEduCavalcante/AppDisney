@@ -30,6 +30,8 @@ import java.util.Random;
 
 public class Home extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
+    public final static String EXTRA_MESSAGE = ".MESSAGE";
+
     private ImageView nmImagem;
     private TextView nmNome, nmComida;
 
@@ -190,6 +192,35 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
     }
     public void Favoritos(View view) {
         Intent intent = new Intent (getApplicationContext(), Playlist.class);
+        startActivity(intent);
+    }
+    public void Albuns(View view) {
+        Intent intent = new Intent (getApplicationContext(), Albuns.class);
+        startActivity(intent);
+    }
+    public void Live(View view){
+        // Intent para a outra activity
+        Intent intent = new Intent(this, Filmes.class);
+
+        // Define a mensagem que será enviada até a outra activity
+        String message = "2";
+
+        intent.putExtra(EXTRA_MESSAGE, message);
+
+        // inicia próxima intent
+        startActivity(intent);
+    }
+    public void Anima(View view){
+
+        // Intent para a outra activity
+        Intent intent = new Intent(this, Filmes.class);
+
+        // Define a mensagem que será enviada até a outra activity
+        String message = "1";
+
+        intent.putExtra(EXTRA_MESSAGE, message);
+
+        // inicia próxima intent
         startActivity(intent);
     }
 }
