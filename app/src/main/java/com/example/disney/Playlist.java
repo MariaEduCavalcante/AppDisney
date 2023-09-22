@@ -25,7 +25,7 @@ public class Playlist extends AppCompatActivity {
 
         nmMusica1 = findViewById(R.id.txtNomeMusica1);
         nmMusica2 = findViewById(R.id.txtNomeMusica2);
-        nmMusica3 = findViewById(R.id.txtNomeMusica3);
+        nmMusica3 = findViewById(R.id.txtMusica1);
         nmMusica4 = findViewById(R.id.txtNomeMusica4);
         nmMusica5 = findViewById(R.id.txtNomeMusica5);
 

@@ -17,6 +17,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,11 +32,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.security.acl.LastOwnerException;
 
 public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>{
     private EditText nmPesquisa;
-    private TextView nmNome, nmNome2, nmFilme, nmFilme2, nmShow, nmShow2;
-    private ImageView nmImagem, nmImagem2;
+    private TextView nmNome, nmLast, nmNascimento;
+    private ImageView nmImagem;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -43,28 +45,22 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisa);
 
-        // Recebe a informação da intent anterior
-        Intent intentDisplay = getIntent();
-        String messageDisplay = intentDisplay.getStringExtra(Widget.EXTRA_MESSAGE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         nmPesquisa = findViewById(R.id.txtPesquisa);
         nmNome = findViewById(R.id.txtNome);
-        nmFilme = findViewById(R.id.txtFilme);
-        nmShow = findViewById(R.id.txtShow);
+        nmLast = findViewById(R.id.txtFilme);
+        nmNascimento = findViewById(R.id.txtShow);
         nmImagem = findViewById(R.id.imgPersona);
 
         if (LoaderManager.getInstance(this).getLoader(0) != null) {
             LoaderManager.getInstance(this).initLoader(0, null, this);
         }
 
-        pesquisa buscaPersonagem = new pesquisa();
-
-        // Define o texto da TextView
-        nmPesquisa.setText(messageDisplay);
-
     }
 
-    public void buscaPersonagem(View view) {
+    public void buscaComposer(View view) {
         // Recupera a string de busca.
         String queryString = nmPesquisa.getText().toString();
         // esconde o teclado qdo o botão é clicado
@@ -109,37 +105,40 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
         if (args != null) {
             queryString = args.getString("queryString");
         }
-        return new DisneyAPI(this, queryString);
+        return new MusicAPI(this, queryString);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
-        JSONObject persona = null;
+        JSONObject composer = null;
         try {
             // Converte a resposta em Json
             JSONObject jsonObject = new JSONObject(data);
             // Obtem o JSONArray dos itens de livros
-            JSONArray itemsArray = jsonObject.getJSONArray("results");
             // inicializa o contador
             int i = 0;
 
             String nome = null;
             String imagem = null;
+            String last = null;
+            String nascimento = null;
 
 
             // Procura pro resultados nos itens do array
-            while (i < itemsArray.length() &&
+            while (i < jsonObject.length() &&
                     (nome == null)) {
                 // Obtem a informação
 
-                Log.v("ERRO APLICAÇÃO", String.valueOf(itemsArray));
-                persona = itemsArray.getJSONObject(i);
+                Log.v("ERRO APLICAÇÃO", String.valueOf(jsonObject));
+                composer = jsonObject;
 
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-                    nome = persona.getString("title");
-                    imagem = persona.getString("image");
+                    nome = composer.getString("nameComposer");
+                    imagem = composer.getString("imgComposerURL");
+                    last = composer.getString("lastName");
+                    nascimento = composer.getString("birth");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -149,17 +148,10 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             }
             //mostra o resultado qdo possivel.
             if (nome != null) {
-
-           //     nmShow2.setText(show2);
                 nmNome.setText(nome);
-               // nmNome2.setText(nome2);
-
-               // nmFilme2.setText(filme2);
-                //picasso serve carregar a imagem
+                nmLast.setText(last);
+                nmNascimento.setText(nascimento);
                 Picasso.get().load(imagem).into(nmImagem);
-               // Picasso.get().load(imagem2).into(nmImagem2);
-
-
             } else {
                 Toast.makeText(pesquisa.this, "Resultado não encontrado", Toast.LENGTH_SHORT).show();
             }
@@ -168,8 +160,6 @@ public class pesquisa extends AppCompatActivity implements LoaderManager.LoaderC
             //nmNome.setText("deu");
             //nmFilme.setText("errado");
         }
-
-
     }
 
 

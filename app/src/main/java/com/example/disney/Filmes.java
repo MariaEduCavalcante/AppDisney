@@ -21,11 +21,10 @@ public class Filmes extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Intent intentDisplay = getIntent();
-        String messageDisplay = intentDisplay.getStringExtra(Home.EXTRA_MESSAGE);
+
 
         nmFilme = findViewById(R.id.txtFilmeSugestao);
 
-        nmFilme.setText(messageDisplay);
     }
 
     public void Quiz(View view) {

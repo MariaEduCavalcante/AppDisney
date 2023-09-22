@@ -59,6 +59,79 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="98dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/layout_shadow_white"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnmusica1"
+                    android:layout_width="123dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginEnd="129dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/vermelho"
+                    android:onClick="Iniciar"
+                    android:text="Salvar"
+                    app:icon="@drawable/play_1"
+                    app:iconPadding="1sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.599"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.786" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica1"
+                    android:layout_width="162dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="191dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:hint="Nota"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/txtNomeMusica"
+                    android:layout_width="162dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="192dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="23dp"
+                    android:editable="true"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:hint="Id do Filme"
+                    android:inputType="textPersonName" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="556dp">
@@ -232,7 +305,7 @@
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/textView11"
+                            android:id="@+id/txtNomeFilme"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -398,7 +471,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView4"
+                            android:id="@+id/txtTrack1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -539,79 +612,6 @@
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </ScrollView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="98dp"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="17dp"
-            android:layout_marginEnd="17dp"
-            android:layout_marginBottom="17dp"
-            android:background="@drawable/layout_shadow_white"
-            app:cardCornerRadius="15dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btnmusica1"
-                    android:layout_width="123dp"
-                    android:layout_height="37dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="125dp"
-                    android:layout_marginEnd="129dp"
-                    android:layout_marginBottom="5dp"
-                    android:backgroundTint="@color/vermelho"
-                    android:onClick="Iniciar"
-                    android:text="Salvar"
-                    app:icon="@drawable/play_1"
-                    app:iconPadding="1sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.599"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.786" />
-
-                <EditText
-                    android:id="@+id/txtNomeMusica1"
-                    android:layout_width="162dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="191dp"
-                    android:editable="true"
-                    android:ems="10"
-                    android:enabled="true"
-                    android:hint="Nota"
-                    android:inputType="textPersonName" />
-
-                <EditText
-                    android:id="@+id/txtNomeMusica"
-                    android:layout_width="162dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="192dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="23dp"
-                    android:editable="true"
-                    android:ems="10"
-                    android:enabled="true"
-                    android:hint="Id do Filme"
-                    android:inputType="textPersonName" />
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
