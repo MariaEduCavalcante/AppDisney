@@ -1,15 +1,16 @@
 # Atualizações do Aplicativo - 3° Bimestre
 > Desenvolvido por Maria Eduarda Cavalcante
 
-* [Vídeo de Funcionamento]()
+`Funcionamento:` [YouTube](https://youtu.be/QpkTBPgElCY)
 
 ## Documentações
 * [API Desenvolvida - Musica Disney](https://github.com/MariaEduCavalcante/MusicaDisneyAPI)
 * [API Substituta - Food API](https://github.com/MariaEduCavalcante/AppDisney/wiki/An%C3%A1lise-%E2%80%90-Food-API)
 * [Mudanças no aplicativo - Escopo](https://github.com/MariaEduCavalcante/AppDisney/wiki/Escopo-de-Atualiza%C3%A7%C3%B5es)
 
-### Observação:
+### Observações:
   * A API do 2° Bimestre está fora do ar no momento, então foi feita a sua substituição por outra.
+  * A API desenvolvida ainda não foi hospedada, mas os códigos para a futura conexão estão prontos.
 
 ***
 
